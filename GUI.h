@@ -9,35 +9,34 @@
 
 #include "Board.h"
 
+//-----------------------------
+// CONSTANTS
+//-----------------------------
+
 #define IMAGE_HEIGHT 50
 #define IMAGE_WIDTH 50
+#define WINDOW_TITLE "Othello"
+#define BOARD_FILE "Board.txt"
+
+//-----------------------------
+// VARIABLES
+//-----------------------------
 
 int windowHeight;
 int windowWidth;
 
-int mouse_x = 0;
-int mouse_y = 0;
+bool should_continue = true;
 
-int should_continue = 1;
+char* main_file;
 
-void initialize_window(const char *title);
-void read_input(void);
-void draw(void);
-void free_gui(void);
-SDL_Texture* create_stone_texture(enum EStone stone);
-void draw_rectangle(SDL_Texture *image, int x, int y, int width, int height);
-void destroy_textures();
+SDL_Texture* black_stone_texture;
+SDL_Texture* white_stone_texture;
+SDL_Texture* empty_stone_texture;
 
+//-----------------------------
+// FUNCTION DECLARATIONS
+//-----------------------------
 
-enum EStone player_stone;
-
-bool turn_skipped;
-
-void create_pawn(Board***, int, int);
-void init_board(void);
-void save_board(const char*);
-void count_stones(Board***);
-void flip_pawns(Board*** board, enum EStone, int , int);
-
+void create_pawn(eStone**, int, int);
 
 #endif /* GUI_H_ */
