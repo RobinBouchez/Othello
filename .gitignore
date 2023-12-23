@@ -1,7 +1,0 @@
-*.o
-*.EXE
-.zshrc
-.DS_STORE
-.idea
-cmake-build-debug
-Othello
